@@ -24,5 +24,9 @@ public class EventTriggerers : MonoBehaviour
         {
             EE.DeathRespawn1();
         }
+        else if (other.gameObject.layer == 10)
+        {
+
+        }
     }
 }

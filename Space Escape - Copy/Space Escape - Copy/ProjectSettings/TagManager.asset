@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - EndingDoorButton
+  - DoorOneButton
   layers:
   - Default
   - TransparentFX
@@ -15,8 +17,8 @@ TagManager:
   - PickUp
   - Push/Pull
   - Death
-  - 
-  - 
+  - Room 1 Button
+  - Door Button
   - 
   - 
   - 

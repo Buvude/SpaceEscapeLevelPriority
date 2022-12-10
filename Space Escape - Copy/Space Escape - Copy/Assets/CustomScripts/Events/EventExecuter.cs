@@ -38,4 +38,16 @@ public class EventExecuter : MonoBehaviour
     {
         FinalDoorUnlocked = true;
     }
+
+    public void openingDoors(Collider other)
+    {
+        if (other.gameObject.CompareTag("DoorOneButton") && Door1Unlocked)
+        {
+            other.gameObject.GetComponentInParent<Animator>().SetTrigger(0);
+        }
+        else if (other.gameObject.CompareTag("EndingDoorButton") && FinalDoorUnlocked)
+        {
+            other.gameObject.GetComponentInParent<Animator>().SetTrigger(0);
+        }
+    }
 }

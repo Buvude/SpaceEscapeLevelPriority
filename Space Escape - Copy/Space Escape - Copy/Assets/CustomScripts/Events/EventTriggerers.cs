@@ -26,7 +26,11 @@ public class EventTriggerers : MonoBehaviour
         }
         else if (other.gameObject.layer == 10)
         {
-
+            EE.Room1Button();
+        }
+        else if (other.gameObject.layer == 11)
+        {
+            EE.openingDoors(other);
         }
     }
 }

@@ -43,11 +43,12 @@ public class EventExecuter : MonoBehaviour
     {
         if (other.gameObject.CompareTag("DoorOneButton") && Door1Unlocked)
         {
-            other.gameObject.GetComponentInParent<Animator>().SetTrigger(0);
+            print("EventExecuter Door Activated");
+            other.gameObject.GetComponentInParent<Animator>().SetTrigger("OpenDoor");
         }
         else if (other.gameObject.CompareTag("EndingDoorButton") && FinalDoorUnlocked)
         {
-            other.gameObject.GetComponentInParent<Animator>().SetTrigger(0);
+            other.gameObject.GetComponentInParent<Animator>().SetTrigger("OpenDoor");
         }
     }
 }

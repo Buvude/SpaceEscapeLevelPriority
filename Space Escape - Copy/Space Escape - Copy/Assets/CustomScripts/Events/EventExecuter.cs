@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EventExecuter : MonoBehaviour
 {
-    
+    public bool Door1Unlocked = false, FinalDoorUnlocked = false;
     public GameObject Player;
     public Transform respawn1;
     // Start is called before the first frame update
@@ -27,5 +27,28 @@ public class EventExecuter : MonoBehaviour
             hand.grabbing = false;
         }
         Player.transform.position = respawn1.position;
+    }
+
+    public void Room1Button()
+    {
+        Door1Unlocked = true;
+    }
+
+    public void FinalDoorOpened()
+    {
+        FinalDoorUnlocked = true;
+    }
+
+    public void openingDoors(Collider other)
+    {
+        if (other.gameObject.CompareTag("DoorOneButton") && Door1Unlocked)
+        {
+            print("EventExecuter Door Activated");
+            other.gameObject.GetComponentInParent<Animator>().SetTrigger("OpenDoor");
+        }
+        else if (other.gameObject.CompareTag("EndingDoorButton") && FinalDoorUnlocked)
+        {
+            other.gameObject.GetComponentInParent<Animator>().SetTrigger("OpenDoor");
+        }
     }
 }

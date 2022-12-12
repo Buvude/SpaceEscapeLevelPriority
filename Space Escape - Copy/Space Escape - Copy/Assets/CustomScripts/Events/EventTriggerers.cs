@@ -24,5 +24,15 @@ public class EventTriggerers : MonoBehaviour
         {
             EE.DeathRespawn1();
         }
+        else if (other.gameObject.layer == 10)
+        {
+            other.gameObject.GetComponentInParent<Animator>().SetBool("press", true);
+            EE.Room1Button();
+        }
+        else if (other.gameObject.layer == 11)
+        {
+            print("Event Trigger Door Activated");
+            EE.openingDoors(other);
+        }
     }
 }

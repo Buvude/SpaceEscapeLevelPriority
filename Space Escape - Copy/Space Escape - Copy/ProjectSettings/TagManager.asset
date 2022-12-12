@@ -6,6 +6,7 @@ TagManager:
   tags:
   - EndingDoorButton
   - DoorOneButton
+  - EntranceDoorButton
   layers:
   - Default
   - TransparentFX

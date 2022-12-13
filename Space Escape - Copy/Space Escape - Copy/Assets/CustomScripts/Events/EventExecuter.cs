@@ -34,6 +34,11 @@ public class EventExecuter : MonoBehaviour
         Door1Unlocked = true;
     }
 
+    public void Room2Button()
+    {
+        FinalDoorUnlocked = true;
+    }
+
     public void FinalDoorOpened()
     {
         FinalDoorUnlocked = true;
@@ -47,6 +52,10 @@ public class EventExecuter : MonoBehaviour
             other.gameObject.GetComponentInParent<Animator>().SetTrigger("OpenDoor");
         }
         else if (other.gameObject.CompareTag("EndingDoorButton") && FinalDoorUnlocked)
+        {
+            other.gameObject.GetComponentInParent<Animator>().SetTrigger("OpenDoor");
+        }
+        else if (other.gameObject.CompareTag("EntranceDoorButton"))
         {
             other.gameObject.GetComponentInParent<Animator>().SetTrigger("OpenDoor");
         }

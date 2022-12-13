@@ -34,5 +34,10 @@ public class EventTriggerers : MonoBehaviour
             print("Event Trigger Door Activated");
             EE.openingDoors(other);
         }
+        else if (other.gameObject.layer == 12)
+        {
+            other.gameObject.GetComponentInParent<Animator>().SetBool("press", true);
+            EE.Room2Button();
+        }
     }
 }
